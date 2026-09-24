@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KJSEA Preparation Quiz: CRE - Christian Religious Education</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap');
+:root{
+  --teal:#0f766e;--teal-d:#0c5e58;--bg:#f6f7f5;--ink:#18181b;
+  --z50:#fafafa;--z100:#f4f4f5;--z200:#e4e4e7;--z300:#d4d4d8;--z500:#71717a;--z600:#52525b;--z700:#3f3f46;--z900:#18181b;
+  --em:#059669;--em50:#ecfdf5;--em200:#a7f3d0;--em800:#065f46;
+  --am:#d97706;--am50:#fffbeb;--am100:#fef3c7;--am200:#fde68a;--am800:#92400e;--am900:#78350f;
+  --red:#dc2626;--red50:#fef2f2;--red200:#fecaca;--red700:#b91c1c;
+  --teal50:#f0fdfa;--teal700:#0f766e;
+}
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%}
+body{background:var(--bg);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.5;-webkit-font-smoothing:antialiased}
+h1,h2,h3{margin:0;font-family:Poppins,Inter,system-ui,sans-serif;letter-spacing:-.02em}
+button{font:inherit;color:inherit;cursor:pointer}
+button:focus-visible,input:focus-visible,summary:focus-visible{outline:3px solid rgba(15,118,110,.45);outline-offset:2px}
+.topbar{position:sticky;top:0;z-index:30;background:#fff;border-bottom:1px solid var(--z200)}
+.topbar-in{max-width:72rem;margin:0 auto;padding:0 16px;height:64px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.brand{display:flex;align-items:center;gap:12px}
+.logo{width:36px;height:36px;border-radius:8px;background:var(--teal);color:#fff;display:flex;align-items:center;justify-content:center;font:700 16px Poppins,Inter,sans-serif}
+.brand b{display:block;font:700 15px Poppins,Inter,sans-serif;letter-spacing:-.01em}
+.brand small{display:block;font-size:11px;color:var(--z500);font-weight:500}
+.chips{display:flex;align-items:center;gap:8px}
+.chip{font-size:12px;border:1px solid var(--z200);background:var(--z50);border-radius:999px;padding:6px 12px;display:flex;align-items:center;gap:8px}
+.chip .dot{width:8px;height:8px;border-radius:50%;background:var(--em)}
+.chip.timer{font-weight:600;background:var(--z900);color:#fff;border-color:var(--z900)}
+.chip.timer.low{background:var(--red50);color:var(--red700);border-color:var(--red200)}
+.wrap{max-width:72rem;margin:0 auto;padding:28px 16px 24px}
+.card{background:#fff;border:1px solid var(--z200);border-radius:20px;box-shadow:0 12px 40px -16px rgba(0,0,0,.1);overflow:hidden}
+.flag{height:6px;background:linear-gradient(to right,#000,#dc2626,#16a34a)}
+.pad{padding:28px}
+.pad-s{padding:20px}
+.grid-landing{display:grid;grid-template-columns:1.1fr .9fr;gap:24px;align-items:start}
+.grid-quiz{display:grid;grid-template-columns:1fr 320px;gap:24px;align-items:start}
+.grid-res{display:grid;grid-template-columns:1.2fr .8fr;gap:24px;align-items:start}
+.pill{display:inline-block;background:rgba(15,118,110,.1);color:var(--teal);font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;border-radius:999px;padding:4px 12px;margin-bottom:16px}
+h1{font-size:32px;line-height:1.1;font-weight:700}
+h1 .teal{color:var(--teal)}
+.lead{margin:12px 0 0;font-size:14px;color:var(--z600);max-width:52ch}
+.subjgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:24px}
+.subj{border:1px solid var(--z200);background:rgba(250,250,250,.7);border-radius:12px;padding:12px}
+.ico{width:28px;height:28px;border-radius:50%;color:#fff;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;flex:none}
+.subj b{display:block;margin-top:8px;font-size:12px}
+.subj span{font-size:11px;color:var(--z500)}
+.notice{margin-top:24px;font-size:12px;color:var(--z600);background:var(--am50);border:1px solid var(--am200);border-radius:8px;padding:8px 12px}
+.notice b{color:var(--ink)}
+.dark{margin:0 28px 28px;border-radius:16px;background:var(--z900);color:#f4f4f5;padding:18px;display:flex;gap:16px;font-size:12px;line-height:1.5}
+.dark .ic{width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;flex:none}
+.dark b{color:#fff;display:block}
+.dark span{color:#d4d4d8}
+.row-h{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.row-h h2{font-size:18px;font-weight:600}
+.tag{font-size:11px;padding:4px 10px;border-radius:999px;background:var(--z100);border:1px solid var(--z200)}
+label.l{display:block;font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--z600)}
+.field{margin-top:18px}
+.inp{margin-top:6px;width:100%;border-radius:12px;border:1px solid var(--z200);background:rgba(250,250,250,.5);padding:12px 16px;font-size:14px;outline:none;transition:border-color .15s,box-shadow .15s,background .15s}
+.inp:focus{background:#fff;border-color:var(--teal);box-shadow:0 0 0 4px rgba(15,118,110,.1)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.grades{margin-top:6px;display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.gbtn{border-radius:12px;border:1px solid var(--z200);background:var(--z50);padding:10px 12px;font-size:13px;font-weight:600;color:var(--z700)}
+.gbtn.on{background:var(--teal);border-color:var(--teal);color:#fff}
+.btn{border:0;border-radius:12px;padding:12px 20px;font-size:13px;font-weight:600}
+.btn.primary{background:var(--teal);color:#fff}
+.btn.primary:hover{background:var(--teal-d)}
+.btn.primary:disabled{background:var(--z300);color:var(--z500);cursor:not-allowed}
+.btn.dark-b{background:var(--z900);color:#fff}
+.btn.dark-b:hover{background:#000}
+.btn.ghost{background:#fff;border:1px solid var(--z200)}
+.btn.ghost:hover{background:var(--z50)}
+.btn.amber{background:#f59e0b;color:var(--z900);font-weight:700}
+.btn.amber:hover{background:var(--am)}
+.btn.full{width:100%;padding:14px}
+.fine{margin-top:12px;font-size:11px;color:var(--z500);text-align:center}
+.what{margin-top:24px;border-top:1px solid var(--z100);padding-top:16px}
+.what h4{margin:0 0 8px;font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--z500)}
+.what ul{margin:0;padding:0;list-style:none;font-size:12px;color:var(--z600)}
+.what li{display:flex;gap:8px;margin-top:8px}
+.what li i{color:var(--em);font-style:normal}
+.qhead{padding:16px 28px;border-bottom:1px solid var(--z100);display:flex;align-items:center;justify-content:space-between;gap:16px}
+.qhead .who{display:flex;align-items:center;gap:12px}
+.qhead small{display:block;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--z500)}
+.qhead b{font-size:13px}
+.bar{height:8px;background:var(--z100);border-radius:999px;overflow:hidden}
+.bar > i{display:block;height:100%;background:var(--teal);transition:width .2s}
+.qhead .bar{width:160px}
+.qhead .n{font-size:11px;font-weight:500;color:var(--z500)}
+.qhead .pr{display:flex;align-items:center;gap:8px}
+.qbody{padding:28px}
+.dots{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:20px}
+.dotb{width:32px;height:32px;border-radius:50%;font-size:12px;font-weight:600;border:1px solid var(--z200);background:#fff;color:var(--z500)}
+.dotb.done{background:var(--em50);border-color:var(--em200);color:var(--em800)}
+.dotb.cur{background:var(--z900);border-color:var(--z900);color:#fff}
+.qtext{font:600 20px/1.35 Poppins,Inter,sans-serif;letter-spacing:-.01em}
+.hintrow{margin-top:20px;display:flex;align-items:center;gap:8px}
+.hbtn{font-size:12px;font-weight:600;padding:6px 12px;border-radius:999px;border:1px solid var(--z200);background:var(--z50);color:var(--z700)}
+.hbtn.on{background:var(--am100);border-color:var(--am200);color:var(--am800)}
+.ans-tag{font-size:11px;color:var(--em800);background:var(--em50);border:1px solid var(--em200);border-radius:999px;padding:4px 10px}
+.hint{margin-top:12px;border-radius:12px;background:var(--am50);border:1px solid var(--am200);padding:12px 16px;font-size:13px;color:var(--am900)}
+.opts{margin-top:20px;display:grid;gap:12px}
+.opt{text-align:left;border-radius:14px;border:1px solid var(--z200);background:#fff;padding:14px 16px;display:flex;align-items:center;gap:12px;transition:background .15s,border-color .15s}
+.opt:hover{background:rgba(250,250,250,.8);border-color:var(--z300)}
+.opt .let{width:32px;height:32px;border-radius:50%;border:1px solid var(--z200);background:var(--z50);color:var(--z600);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex:none}
+.opt .tx{font-size:14px;line-height:1.4}
+.opt.sel{background:var(--teal);border-color:var(--teal);color:#fff;box-shadow:0 6px 20px -8px rgba(15,118,110,.6)}
+.opt.sel .let{background:#fff;color:var(--teal);border-color:#fff}
+.opt.sel .tx{font-weight:500}
+.navrow{margin-top:28px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.navrow .btn:disabled{opacity:.4;cursor:not-allowed}
+.side{display:grid;gap:16px}
+.box{background:#fff;border:1px solid var(--z200);border-radius:20px;padding:20px}
+.box h4{margin:0;font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--z500)}
+.box .nm{margin-top:8px;font-weight:600;font-size:14px}
+.box .sub{font-size:12px;color:var(--z500)}
+.mini{margin-top:16px;display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.mini div{border:1px solid var(--z200);background:var(--z50);border-radius:12px;padding:10px;text-align:center}
+.mini small{display:block;font-size:10px;text-transform:uppercase;letter-spacing:.04em;color:var(--z500)}
+.mini b{font-size:14px}
+.prog{margin-top:16px}
+.prog .t{display:flex;justify-content:space-between;font-size:11px;color:var(--z500);margin-bottom:4px}
+.warn{margin-top:12px;font-size:11px;color:var(--z500)}
+.tip{background:var(--teal);color:#fff;border-radius:20px;padding:20px}
+.tip small{display:block;font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;opacity:.8}
+.tip p{margin:8px 0 0;font-size:13px;line-height:1.5}
+.lvl{display:inline-flex;align-items:center;gap:8px;border-radius:999px;padding:4px 12px;font-size:11px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;border:1px solid}
+.lvl .d{width:8px;height:8px;border-radius:50%}
+.lvl.exc{background:var(--em50);color:var(--em800);border-color:var(--em200)}.lvl.exc .d{background:var(--em)}
+.lvl.meet{background:var(--teal50);color:var(--teal700);border-color:#99f6e4}.lvl.meet .d{background:var(--teal)}
+.lvl.app{background:var(--am50);color:var(--am800);border-color:var(--am200)}.lvl.app .d{background:var(--am)}
+.lvl.below{background:var(--red50);color:var(--red700);border-color:var(--red200)}.lvl.below .d{background:var(--red)}
+.hero{display:flex;flex-wrap:wrap;align-items:flex-start;justify-content:space-between;gap:16px}
+.hero h2{margin-top:12px;font-size:28px;line-height:1}
+.hero p{margin:4px 0 0;font-size:14px;color:var(--z600)}
+.levelbox{border-radius:16px;background:var(--z900);color:#fff;padding:16px 20px;min-width:150px}
+.levelbox small{display:block;font-size:11px;text-transform:uppercase;letter-spacing:.1em;opacity:.7}
+.levelbox b{display:block;margin-top:4px;font:700 18px/1.2 Poppins,Inter,sans-serif}
+.levelbox .bar{margin-top:8px;height:6px;background:rgba(255,255,255,.2)}
+.levelbox .bar i{background:#fff}
+.sgrid{margin-top:24px;display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.sc{border:1px solid var(--z200);border-radius:12px;padding:12px}
+.sc small{font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--z500)}
+.sc b{display:block;margin-top:4px;font-size:16px}
+.sc .bar{margin-top:8px;height:6px}
+.btns{margin-top:24px;display:flex;flex-wrap:wrap;gap:8px}
+.sent{margin-top:16px;border-radius:12px;background:var(--em50);border:1px solid var(--em200);padding:12px 16px;font-size:12px;color:#064e3b}
+.kv{margin-top:12px;display:grid;gap:8px;font-size:13px}
+.kv div{display:flex;justify-content:space-between;gap:12px}
+.kv span{color:var(--z500)}
+.kv b{font-weight:600;text-align:right}
+.copyrow{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.copyrow button{font-size:11px;font-weight:600;padding:4px 10px;border-radius:999px;border:0;background:var(--z900);color:#fff}
+textarea.rep{margin-top:12px;width:100%;height:220px;border-radius:12px;border:1px solid var(--z200);background:var(--z50);padding:12px;font:11px/1.4 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;resize:vertical}
+.okmsg{margin-top:8px;font-size:11px;font-weight:600;color:var(--em)}
+.review{margin-top:24px}
+.review .hd{padding:20px 28px;border-bottom:1px solid var(--z100)}
+.rv{padding:24px 28px;border-top:1px solid var(--z100)}
+.rv:first-of-type{border-top:0}
+.rv .top{display:flex;align-items:flex-start;gap:12px}
+.mark{width:32px;height:32px;border-radius:50%;color:#fff;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex:none;margin-top:2px}
+.mark.ok{background:var(--em)}.mark.no{background:var(--red)}
+.rv .meta{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.rv .meta small{font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--z500)}
+.rv .meta em{font-style:normal;font-size:10px;font-weight:600;padding:2px 8px;border-radius:999px;border:1px solid}
+.rv .meta em.ok{background:var(--em50);border-color:var(--em200);color:var(--em800)}
+.rv .meta em.no{background:var(--red50);border-color:var(--red200);color:var(--red700)}
+.rv .q{margin-top:4px;font-weight:500;font-size:15px;line-height:1.5;max-width:70ch}
+.cmp{margin-top:16px;display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.cmp div{border:1px solid;border-radius:12px;padding:12px}
+.cmp small{display:block;font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;opacity:.75}
+.cmp span{display:block;margin-top:4px;font-size:13px;font-weight:500}
+.cmp .g{background:var(--em50);border-color:var(--em200);color:#064e3b}
+.cmp .r{background:var(--red50);border-color:var(--red200)}
+.expl{margin-top:16px;border-radius:12px;background:var(--z50);border:1px solid var(--z200);padding:16px}
+.expl small{display:block;font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--z500)}
+.expl p{margin:4px 0 0;font-size:13px;line-height:1.6;color:#27272a}
+.expl p.w{font-size:12px;color:var(--z600);line-height:1.5}
+.expl small + p + small{margin-top:12px}
+details.setup{max-width:72rem;margin:0 auto 24px;padding:0 16px}
+details.setup > div{background:#fff;border:1px solid var(--z200);border-radius:12px;padding:12px 16px}
+details.setup summary{font-size:12px;font-weight:600;cursor:pointer}
+details.setup p{margin:8px 0 0;font-size:12px;color:var(--z600)}
+footer{max-width:72rem;margin:0 auto;padding:16px;border-top:1px solid var(--z200);font-size:11px;color:var(--z500);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+@media (max-width:900px){
+  .grid-landing,.grid-quiz,.grid-res{grid-template-columns:1fr}
+  .chip.cnt{display:none}
+}
+@media (max-width:560px){
+  h1{font-size:26px}.pad{padding:20px}.two,.cmp{grid-template-columns:1fr}
+  .qhead{padding:14px 18px}.qbody{padding:20px 18px}.qtext{font-size:18px}
+  .qhead .bar{width:90px}.dark{margin:0 20px 20px}.rv,.review .hd{padding:20px 18px}
+  .subjgrid,.sgrid{gap:8px}
+}
+</style>
+</head>
+<body>
+<div class="topbar"><div class="topbar-in">
+  <div class="brand"><div class="logo">KJ</div><div><b>KJSEA Portal</b><small>CBC Junior Secondary • 2025/26</small></div></div>
+  <div class="chips" id="chips"></div>
+</div></div>
+<div class="wrap" id="app"></div>
+<details class="setup"><summary>Teacher setup: make the email fully automatic (optional)</summary><div>
+<p>This page uses a <code>mailto:</code> link, so the learner's own email app opens with the result already filled in for <b id="setup-mail"></b>. The teacher address is the <code>TEACHER_EMAIL</code> value at the top of the script. To send silently without opening an email app, connect a service such as EmailJS or Formspree inside <code>emailTeacher()</code>. Data stays in memory only; nothing is saved in the browser.</p></div></details>
+<footer><div>KJSEA CBC Portal • Kenya Junior Secondary Assessment • Made for learners in Grade 7-9</div><div id="foot-mail"></div></footer>
+
+<script>
+"use strict";
+/* ============ SETTINGS ============ */
+const TEACHER_EMAIL = "allansaboke@gmail.com";
+const QUIZ_TITLE = "CRE";
+const TIP_TEXT = "For CRE, first identify the testament, book, and context. For Jesus' parables and miracles, focus on the lesson, not just the story. For leadership questions, think of courage, faith, and obedience to God.";
+const DURATION = 2700; /* 45 minutes */
+/* ============ QUESTIONS ============ */
+const QUESTIONS = [
+ {
+  "subject": "Introduction to CRE",
+  "q": "There are many benefits of learning Christian Religious Education in school today. Which of the following is one of the benefits?",
+  "options": [
+   "It helps learners to know their church leaders.",
+   "It makes parents buy CRE textbooks for learners.",
+   "It helps learners to grow spiritually.",
+   "It makes the parents of the learners happy."
+  ],
+  "correct": 2,
+  "explanation": "The main purpose of CRE is to promote spiritual growth, moral values, and character formation, not just knowledge of leaders or pleasing parents.",
+  "whyWrong": "Options A, B and D are secondary or incorrect – CRE is not about knowing leaders, forcing purchases, or making parents happy.",
+  "hint": "Think about the core purpose of Religious Education in the CBC curriculum."
+ },
+ {
+  "subject": "Creation and Fall",
+  "q": "You read the Bible on the two accounts of creation in Genesis 1 and 2 and noted that they have similarities. One of the similarities is that",
+  "options": [
+   "God gave human beings duties to perform",
+   "God chased human beings out of the Garden of Eden",
+   "Human beings gave names to all the animals",
+   "Human beings made clothes for themselves"
+  ],
+  "correct": 0,
+  "explanation": "In both Genesis 1 and 2, God assigns work to humans - to till, keep, and have dominion over creation. Expulsion and making clothes happen after the fall.",
+  "whyWrong": "B and D happened after disobedience, and C is only explicitly in Genesis 2. The duty to work is common to both accounts.",
+  "hint": "What did God give man to do in both creation stories before sin entered?"
+ },
+ {
+  "subject": "Creation and Fall",
+  "q": "One way in which God showed his love for Adam and Eve after they ate the fruit from the tree in the middle of the garden was by",
+  "options": [
+   "Cursing the snake in the garden",
+   "Putting a Cherubim to protect the garden",
+   "Giving man power to rule over the woman",
+   "Looking for them in the garden"
+  ],
+  "correct": 3,
+  "explanation": "Genesis 3:9 shows God seeking them - 'Where are you?' - demonstrating love, concern, and a desire to maintain relationship even after sin.",
+  "whyWrong": "Cursing the snake is judgment on evil, Cherubim was to prevent return, and ruling over woman was a consequence. Seeking them shows love.",
+  "hint": "Which action shows God still wanted relationship after they hid?"
+ },
+ {
+  "subject": "Christian Living Today",
+  "q": "A resource person gave a talk to Grade 7 learners on ways of maintaining a healthy environment in the school. Which of the following is the best way to demonstrate what was learnt from the talk?",
+  "options": [
+   "Reporting those who throw waste paper carelessly.",
+   "Collecting litter in the compound every day.",
+   "Reminding the classmates to take their cleaning duties seriously.",
+   "Avoiding stepping on the grass in the school compound."
+  ],
+  "correct": 1,
+  "explanation": "Active participation – daily collection of litter – demonstrates stewardship and responsibility, which is a practical application of caring for God's creation.",
+  "whyWrong": "Reporting, reminding, and avoiding grass are passive or supervisory. The best demonstration is personal action.",
+  "hint": "CBC emphasizes doing, not just talking – which option is practical action?"
+ },
+ {
+  "subject": "The Bible",
+  "q": "The Bible has been translated into many languages from its original language. What was the original language of the Old Testament?",
+  "options": [
+   "Hebrew",
+   "Latin",
+   "English",
+   "Greek"
+  ],
+  "correct": 0,
+  "explanation": "The Old Testament was originally written mostly in Hebrew, with small portions in Aramaic. The New Testament was in Greek.",
+  "whyWrong": "Latin was the Vulgate translation, English is a modern translation, and Greek is the language of the New Testament.",
+  "hint": "The language of the Israelites in the Old Testament times."
+ },
+ {
+  "subject": "The Bible",
+  "q": "The following are ways in which Christians can make good use of the Bible except to",
+  "options": [
+   "Accumulate riches",
+   "Live a Christian life",
+   "Guide new converts",
+   "Form new churches"
+  ],
+  "correct": 0,
+  "explanation": "The Bible is for spiritual growth, teaching, and guidance, not as a tool for selfish material accumulation. This would be misuse.",
+  "whyWrong": "Living a Christian life, guiding converts, and planting churches are legitimate uses of Scripture.",
+  "hint": "Which use is selfish and not in line with Christian values?"
+ },
+ {
+  "subject": "Leadership in Israel",
+  "q": "A lesson that Christians learn from the leadership of Deborah as a Judge in Israel is that they should",
+  "options": [
+   "Fight their enemies",
+   "Be courageous in their undertakings",
+   "Make themselves famous",
+   "Reward the people who work hard"
+  ],
+  "correct": 1,
+  "explanation": "Deborah showed courage, wisdom and faith by leading Israel at a time when women leaders were rare, trusting God to deliver Israel from Sisera.",
+  "whyWrong": "She did not fight for personal revenge, fame, or for rewarding workers – her core virtue was courageous faith in God.",
+  "hint": "What virtue did Deborah need to judge Israel and go to war against Canaanites?"
+ },
+ {
+  "subject": "Leadership in Israel",
+  "q": "King Solomon was a great leader in Israel. However, God was displeased with him towards the end of his rule. The main reason for this was because he",
+  "options": [
+   "Built his own palace for 13 years",
+   "Allowed the worship of foreign gods in Israel",
+   "Sold part of Israel's land to settle his debts",
+   "Introduced forced labour in Israel"
+  ],
+  "correct": 1,
+  "explanation": "1 Kings 11 says Solomon's foreign wives turned his heart to other gods, and he built high places for them, violating the covenant.",
+  "whyWrong": "Building palace, selling land, and forced labour were political issues, but idolatry was the spiritual reason God was displeased.",
+  "hint": "Remember what happened when Solomon married many foreign wives."
+ },
+ {
+  "subject": "Life of Jesus",
+  "q": "Jesus used the parable of the lost sheep to teach his audience. The main lesson that Christians learn from this parable is to",
+  "options": [
+   "Take good care of their God-given property",
+   "Seek the people lost in sin",
+   "Employ good servants to care for their sheep",
+   "Avoid keeping many sheep"
+  ],
+  "correct": 1,
+  "explanation": "The parable shows God's love for sinners – like a shepherd leaving 99 to find 1 lost sheep, Christians should seek and restore those lost in sin.",
+  "whyWrong": "It is not about property management, hiring workers, or herd size – it is about salvation of the lost.",
+  "hint": "Who does the lost sheep represent in the parable?"
+ },
+ {
+  "subject": "Life of Jesus",
+  "q": "During his earthly ministry, Jesus performed many miracles. Which of the following miracles teaches Christians to be thankful?",
+  "options": [
+   "Healing of the ten lepers.",
+   "Feeding of the five thousand.",
+   "Raising of Lazarus to life.",
+   "Calming of the storm."
+  ],
+  "correct": 0,
+  "explanation": "In Luke 17, ten lepers were healed but only one Samaritan returned to thank Jesus, teaching gratitude.",
+  "whyWrong": "Feeding 5000 teaches sharing, Lazarus teaches resurrection power, calming storm teaches faith – gratitude is highlighted in the lepers.",
+  "hint": "Only one out of ten came back to say thank you."
+ },
+ {
+  "subject": "Life of Jesus",
+  "q": "After Jesus entered Jerusalem, he went to the temple and cleansed it because",
+  "options": [
+   "He was requested by the religious leaders to do so",
+   "People had stopped cleaning the temple",
+   "It was being misused by the people",
+   "He was requested by his followers to do so"
+  ],
+  "correct": 2,
+  "explanation": "The temple had become a market place with money changers and traders, misusing it for business instead of prayer – Jesus restored its holiness.",
+  "whyWrong": "No one requested him; it was his own zeal for God's house. It was not about physical cleaning but misuse for trade.",
+  "hint": "What were people doing in the temple – selling doves and exchanging money?"
+ },
+ {
+  "subject": "Life of Jesus",
+  "q": "\"This is my body which is given for you\" (Luke 22:19). When did Jesus speak these words to his disciples?",
+  "options": [
+   "When he was praying on Mount Olives.",
+   "During his crucifixion.",
+   "When he was in the house of Zacchaeus.",
+   "During the Last Supper."
+  ],
+  "correct": 3,
+  "explanation": "This was during the institution of the Lord's Supper/Holy Communion on the night he was betrayed, as he shared bread with disciples.",
+  "whyWrong": "On Mount Olives he prayed, on cross he said 'Father forgive them', and in Zacchaeus house he spoke of salvation.",
+  "hint": "When do Christians hear these words repeated in church today?"
+ },
+ {
+  "subject": "Life of Jesus",
+  "q": "According to the teachings of Jesus on prayer, Christians learn that they should",
+  "options": [
+   "Pray on mountains",
+   "Make long prayers daily",
+   "Have faith when praying",
+   "Pray in a loud voice"
+  ],
+  "correct": 2,
+  "explanation": "Jesus taught faith, persistence, humility and sincerity in prayer, not location, length or volume (Matthew 6:5-13).",
+  "whyWrong": "Mountain, long, and loud prayers were criticized as Pharisaic show – faith is the key teaching.",
+  "hint": "What does Mark 11:24 say about believing when you pray?"
+ },
+ {
+  "subject": "The Early Church",
+  "q": "Who among the following apostles of the Early Church healed a lame man at the Beautiful Gate of the temple?",
+  "options": [
+   "James",
+   "Peter",
+   "Andrew",
+   "Philip"
+  ],
+  "correct": 1,
+  "explanation": "Acts 3 records Peter and John healing the beggar at the Beautiful Gate, with Peter saying 'Silver and gold have I none...'",
+  "whyWrong": "James, Andrew and Philip were apostles but this specific miracle is attributed to Peter (with John).",
+  "hint": "Which apostle said 'In the name of Jesus Christ of Nazareth, walk'?"
+ },
+ {
+  "subject": "The Early Church",
+  "q": "You are asked to use examples to show the differences between the gifts and the fruits of the Holy Spirit. Select the box that only contains the gifts of the Holy Spirit.",
+  "options": [
+   "Peace, Self-control",
+   "Knowledge, Wisdom",
+   "Patience, Prophecy",
+   "Healing, Goodness"
+  ],
+  "correct": 1,
+  "explanation": "Knowledge and Wisdom are gifts of the Holy Spirit (1 Cor 12). Peace, Self-control, Patience, Goodness are fruits (Galatians 5:22-23).",
+  "whyWrong": "A has fruits only, C mixes fruit (Patience) and gift (Prophecy), D mixes gift (Healing) and fruit (Goodness).",
+  "hint": "Fruits are character; Gifts are abilities – which pair are both abilities?"
+ },
+ {
+  "subject": "Christian Living Today",
+  "q": "Grade 9 learners discussed the consequences of early marriage. One of the consequences likely to have been discussed is that it",
+  "options": [
+   "Reduces wealth for the man's family",
+   "Prevents cases of single parenthood",
+   "Expands family relationships",
+   "Increases chances of school drop outs."
+  ],
+  "correct": 3,
+  "explanation": "Early marriage is a major cause of school dropout, especially for girls, leading to health risks and poverty.",
+  "whyWrong": "It does not reduce wealth or prevent single parenthood; in fact it often leads to broken families and does not necessarily expand healthy relationships.",
+  "hint": "What happens to a Class 8 or Grade 9 learner who gets married early?"
+ },
+ {
+  "subject": "The Early Church",
+  "q": "You attended a church service where the sermon was on the story of Paul and Silas in jail. From the sermon, what is the main lesson you learnt as a Christian?",
+  "options": [
+   "To cast out evil spirits from people.",
+   "To speak the truth at all times.",
+   "To endure suffering for the sake of Christ.",
+   "To cooperate with others in serving God."
+  ],
+  "correct": 2,
+  "explanation": "Acts 16: Paul and Silas sang in prison despite being beaten, showing endurance and joy in suffering for the Gospel.",
+  "whyWrong": "Though they did cast out spirits and cooperate, the central lesson from the jail experience is endurance in persecution.",
+  "hint": "What did they do at midnight in prison despite their chains?"
+ },
+ {
+  "subject": "Christian Living Today",
+  "q": "You conducted a library search on healthy family relationships. Which of the following is the best practice to observe to maintain a healthy Christian family?",
+  "options": [
+   "Solving conflicts peacefully.",
+   "Family members working to get wealth.",
+   "Taking children to school.",
+   "Buying food for the family."
+  ],
+  "correct": 0,
+  "explanation": "Peaceful conflict resolution, forgiveness, communication and prayer are core to a healthy Christian family (Colossians 3).",
+  "whyWrong": "Working for wealth, taking to school, buying food are duties but do not guarantee healthy relationships without peace.",
+  "hint": "What keeps love in a family when disagreements come?"
+ },
+ {
+  "subject": "Christian Living Today",
+  "q": "There are many leisure activities that individuals engage in today. Which of the following leisure activities is common in both the Christian and secular world?",
+  "options": [
+   "Gambling",
+   "Prayer retreats",
+   "Sports",
+   "Attending discos"
+  ],
+  "correct": 2,
+  "explanation": "Sports are neutral and enjoyed by both Christians and non-Christians for fitness and relaxation, unlike gambling and discos which conflict with Christian values.",
+  "whyWrong": "Gambling and discos are discouraged for Christians, prayer retreats are specifically Christian.",
+  "hint": "Which activity is acceptable in both a church camp and a school fun day?"
+ },
+ {
+  "subject": "Christian Living Today",
+  "q": "Your class brainstormed on the electronic gadgets that are found both at home and in school. From the gadgets they mentioned, select one that is most suitable for learning CRE at home.",
+  "options": [
+   "Microphone.",
+   "Projector.",
+   "Amplifier.",
+   "Mobile phone."
+  ],
+  "correct": 3,
+  "explanation": "A mobile phone can access Bible apps, CRE videos, online notes, and teacher materials at home, unlike microphone, projector, amplifier which are school presentation tools.",
+  "whyWrong": "Microphone, projector and amplifier help amplify or display but do not contain content for personal study at home.",
+  "hint": "Which gadget can you use to watch a YouTube CRE lesson and read the Bible app?"
+ }
+];
+/* ============ APP ============ */
+const SUBJECT_STYLE = {
+  "Performing Arts": {icon:"\u266A", color:"#0f766e"},
+  "Sports": {icon:"\u25CE", color:"#059669"},
+  "Visual Arts": {icon:"\u270E", color:"#d97706"}
+};
+const N = QUESTIONS.length;
+const SUBJECTS = QUESTIONS.reduce((a,q)=>a.includes(q.subject)?a:a.concat(q.subject),[]);
+const $ = (s)=>document.querySelector(s);
+const esc = (s)=>String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const fmt = (s)=>String(Math.floor(s/60)).padStart(2,"0")+":"+String(s%60).padStart(2,"0");
+const letter = (i)=>String.fromCharCode(65+i);
+
+const S = {view:"landing", learner:{name:"",school:"",grade:"Grade 8",admission:""},
+  idx:0, answers:Array(N).fill(null), hint:false, remaining:DURATION, elapsed:0, emailed:false, copied:false, timer:null};
+
+function level(p){
+  if(p>=80) return {label:"Exceeding Expectation",cls:"exc",desc:"Outstanding mastery!"};
+  if(p>=60) return {label:"Meeting Expectation",cls:"meet",desc:"Solid competency."};
+  if(p>=40) return {label:"Approaching Expectation",cls:"app",desc:"Keep practicing."};
+  return {label:"Below Expectation",cls:"below",desc:"Needs support."};
+}
+const score = ()=>S.answers.reduce((n,a,i)=>a===QUESTIONS[i].correct?n+1:n,0);
+const answered = ()=>S.answers.filter(a=>a!==null).length;
+function subjStats(sub){
+  const items = QUESTIONS.map((q,i)=>({q,i})).filter(x=>x.q.subject===sub);
+  return {correct:items.filter(x=>S.answers[x.i]===x.q.correct).length,total:items.length};
+}
+const shortName = (s)=>s;
+
+function report(){
+  const L = S.learner, s = score(), pct = Math.round(s/N*100), lv = level(pct);
+  const now = new Date().toLocaleString("en-KE",{timeZone:"Africa/Nairobi"});
+  const o = [];
+  o.push("KJSEA CBC MOCK QUIZ RESULT: "+QUIZ_TITLE);
+  o.push("Date: "+now+" (EAT)");
+  o.push("Teacher Email: "+TEACHER_EMAIL);
+  o.push("----------------------------------------");
+  o.push("LEARNER DETAILS");
+  o.push("Name: "+L.name);
+  o.push("School: "+(L.school||"Not provided"));
+  o.push("Grade: "+L.grade);
+  o.push("Admission No: "+(L.admission||"N/A"));
+  o.push("----------------------------------------");
+  o.push("PERFORMANCE SUMMARY");
+  o.push("Score: "+s+"/"+N);
+  o.push("Percentage: "+pct+"%");
+  o.push("CBC Level: "+lv.label+" - "+lv.desc);
+  o.push("Time Taken: "+fmt(S.elapsed)+" / "+fmt(DURATION));
+  o.push("----------------------------------------");
+  o.push("SUBJECT BREAKDOWN");
+  SUBJECTS.forEach(sub=>{const t=subjStats(sub);o.push(sub+": "+t.correct+"/"+t.total);});
+  o.push("----------------------------------------");
+  o.push("QUESTION-BY-QUESTION");
+  QUESTIONS.forEach((q,i)=>{
+    const a=S.answers[i];
+    o.push((i+1)+". ["+q.subject+"] "+q.q);
+    o.push("   Your Answer: "+(a!==null?q.options[a]:"Not answered")+" - "+(a===q.correct?"CORRECT":"WRONG"));
+    o.push("   Correct Answer: "+q.options[q.correct]);
+    o.push("");
+  });
+  o.push("----------------------------------------");
+  o.push("Generated by KJSEA Preparation Portal - CBC Junior Secondary");
+  return o.join("\n");
+}
+
+function emailTeacher(){
+  const s=score(), pct=Math.round(s/N*100);
+  const subject = "KJSEA Quiz Result: "+S.learner.name+" - "+s+"/"+N+" ("+pct+"%) - "+new Date().toLocaleDateString();
+  window.location.href = "mailto:"+TEACHER_EMAIL+"?subject="+encodeURIComponent(subject)+"&body="+encodeURIComponent(report());
+  S.emailed = true; render();
+}
+function finish(){
+  if(S.view!=="quiz") return;
+  clearInterval(S.timer); S.timer=null;
+  S.elapsed = DURATION - S.remaining;
+  S.view="result"; S.hint=false; window.scrollTo(0,0); render();
+  setTimeout(emailTeacher,800);
+}
+function startQuiz(){
+  S.view="quiz"; S.idx=0; S.answers=Array(N).fill(null); S.hint=false; S.remaining=DURATION; S.emailed=false; S.copied=false;
+  clearInterval(S.timer);
+  S.timer=setInterval(()=>{
+    S.remaining--;
+    updateTimer();
+    if(S.remaining<=0){S.remaining=0;finish();}
+  },1000);
+  window.scrollTo(0,0); render();
+}
+function updateTimer(){
+  const t=$("#timer"); if(!t) return;
+  t.textContent = "\u23F1 "+fmt(S.remaining);
+  t.classList.toggle("low",S.remaining<300);
+}
+
+/* ---------- views ---------- */
+function chips(){
+  if(S.view==="quiz") return '<div class="chip cnt"><span class="dot"></span>'+answered()+'/'+N+' answered</div>'+
+    '<div class="chip timer'+(S.remaining<300?' low':'')+'" id="timer">\u23F1 '+fmt(S.remaining)+'</div>';
+  if(S.view==="result") return '<div class="chip cnt">Teacher copy: '+esc(TEACHER_EMAIL)+'</div>';
+  return "";
+}
+function landing(){
+  const cards = SUBJECTS.map(sub=>{
+    const st=SUBJECT_STYLE[sub]||{icon:"\u25CF",color:"#0f766e"};
+    const c=QUESTIONS.filter(q=>q.subject===sub).length;
+    return '<div class="subj"><div class="ico" style="background:'+st.color+'">'+st.icon+'</div><b>'+esc(sub)+'</b><span>'+c+' Qs</span></div>';
+  }).join("");
+  const L=S.learner;
+  return '<div class="grid-landing">'+
+  '<section class="card"><div class="flag"></div><div class="pad">'+
+    '<span class="pill">Official Mock • Grade 7-9</span>'+
+    '<h1>KJSEA <span class="teal">CRE</span> Preparation Quiz</h1>'+
+    '<p class="lead">Competency Based Curriculum (CBC) - Junior Secondary Mock. '+N+' questions modelled on the KJSEA Creative Arts and Sports paper. Complete in one sitting, get an instant CBC level with full explanations.</p>'+
+    '<div class="subjgrid">'+cards+'</div>'+
+    '<div class="notice">\uD83D\uDD12 Results will be shared with your teacher at <b>'+esc(TEACHER_EMAIL)+'</b> automatically on submit.</div>'+
+  '</div>'+
+  '<div class="dark"><div class="ic">\u2726</div><div><b>How scoring works</b><span>80%+ Exceeding • 60-79% Meeting • 40-59% Approaching • Below 40% Below Expectation. Timer: 45 minutes.</span></div></div>'+
+  '</section>'+
+  '<section class="card pad"><div class="row-h"><h2>Learner Details</h2><span class="tag">Step 1 of 3</span></div>'+
+    '<div class="field"><label class="l" for="f-name">Full Name *</label><input class="inp" id="f-name" value="'+esc(L.name)+'" placeholder="e.g., Aisha Wanjiku Mwangi" autocomplete="name"></div>'+
+    '<div class="field two"><div><label class="l" for="f-school">School Name</label><input class="inp" id="f-school" value="'+esc(L.school)+'" placeholder="e.g., Baraka JSS"></div>'+
+    '<div><label class="l">Grade</label><div class="grades">'+["Grade 7","Grade 8","Grade 9"].map(g=>'<button type="button" class="gbtn'+(L.grade===g?' on':'')+'" data-a="grade" data-v="'+g+'">'+g.replace("Grade ","G")+'</button>').join("")+'</div></div></div>'+
+    '<div class="field"><label class="l" for="f-adm">Admission Number (Optional)</label><input class="inp" id="f-adm" value="'+esc(L.admission)+'" placeholder="e.g., JSS/2024/142"></div>'+
+    '<div class="field"><button type="button" class="btn primary full" id="startBtn" data-a="start"'+(L.name.trim()?'':' disabled')+'>Start Quiz - '+N+' Questions \u2192</button>'+
+    '<div class="fine">By starting, you agree your results will be emailed to your teacher. No account needed.</div></div>'+
+    '<div class="what"><h4>What you will get</h4><ul><li><i>\u2713</i> Instant score, CBC level and subject breakdown</li><li><i>\u2713</i> Full explanation for every question</li><li><i>\u2713</i> Downloadable report and teacher email</li></ul></div>'+
+  '</section></div>';
+}
+function quiz(){
+  const q=QUESTIONS[S.idx], st=SUBJECT_STYLE[q.subject]||{icon:"\u25CF",color:"#0f766e"};
+  const dots=QUESTIONS.map((_,i)=>'<button type="button" class="dotb'+(i===S.idx?' cur':(S.answers[i]!==null?' done':''))+'" data-a="nav" data-i="'+i+'" aria-label="Question '+(i+1)+'">'+(i+1)+'</button>').join("");
+  const opts=q.options.map((o,i)=>'<button type="button" class="opt'+(S.answers[S.idx]===i?' sel':'')+'" data-a="pick" data-i="'+i+'"><span class="let">'+letter(i)+'</span><span class="tx">'+esc(o)+'</span></button>').join("");
+  const mini=SUBJECTS.map(sub=>{const t=subjStats(sub);return '<div><small>'+esc(sub)+'</small><b>'+t.correct+'/'+t.total+'</b></div>';}).join("");
+  const a=answered();
+  return '<div class="grid-quiz"><section class="card">'+
+    '<div class="qhead"><div class="who"><div class="ico" style="background:'+st.color+';width:32px;height:32px">'+st.icon+'</div><div><small>'+esc(q.subject)+'</small><b>Question '+(S.idx+1)+' of '+N+'</b></div></div>'+
+    '<div class="pr"><div class="bar"><i style="width:'+((S.idx+1)/N*100)+'%"></i></div><span class="n">'+(S.idx+1)+'/'+N+'</span></div></div>'+
+    '<div class="qbody"><div class="dots">'+dots+'</div>'+
+    '<h3 class="qtext">'+esc(q.q)+'</h3>'+
+    '<div class="hintrow"><button type="button" class="hbtn'+(S.hint?' on':'')+'" data-a="hint">'+(S.hint?'Hide Hint':'\uD83D\uDCA1 Show Hint')+'</button>'+(S.answers[S.idx]!==null?'<span class="ans-tag">Answered</span>':'')+'</div>'+
+    (S.hint?'<div class="hint">'+esc(q.hint)+'</div>':'')+
+    '<div class="opts">'+opts+'</div>'+
+    '<div class="navrow"><button type="button" class="btn ghost" data-a="prev"'+(S.idx===0?' disabled':'')+'>\u2190 Previous</button>'+
+    (S.idx<N-1?'<button type="button" class="btn dark-b" data-a="next">Next \u2192</button>':'<button type="button" class="btn primary" data-a="submit">Finish &amp; Submit</button>')+'</div>'+
+    '</div></section>'+
+    '<aside class="side"><div class="box"><h4>Learner</h4><div class="nm">'+esc(S.learner.name)+'</div><div class="sub">'+esc(S.learner.school||"-")+' • '+esc(S.learner.grade)+'</div>'+
+    '<div class="mini">'+mini+'</div>'+
+    '<div class="prog"><div class="t"><span>Progress</span><span>'+a+'/'+N+'</span></div><div class="bar"><i style="width:'+(a/N*100)+'%"></i></div></div>'+
+    '<button type="button" class="btn amber full" style="margin-top:16px;padding:10px" data-a="submit">Submit Quiz</button>'+
+    '<div class="warn">Unanswered questions will be marked wrong. You can jump using the numbers above.</div></div>'+
+    '<div class="tip"><small>CBC Tip</small><p>'+TIP_TEXT+'</p></div></aside></div>';
+}
+function result(){
+  const L=S.learner, s=score(), pct=Math.round(s/N*100), lv=level(pct);
+  const sc=SUBJECTS.map(sub=>{const t=subjStats(sub);return '<div class="sc"><small>'+esc(sub)+'</small><b>'+t.correct+'/'+t.total+'</b><div class="bar"><i style="width:'+(t.correct/t.total*100)+'%"></i></div></div>';}).join("");
+  const rv=QUESTIONS.map((q,i)=>{
+    const a=S.answers[i], ok=a===q.correct;
+    return '<div class="rv"><div class="top"><div class="mark '+(ok?'ok':'no')+'">'+(ok?'\u2713':'\u2715')+'</div><div>'+
+      '<div class="meta"><small>Q'+(i+1)+' • '+esc(q.subject)+'</small><em class="'+(ok?'ok':'no')+'">'+(ok?'Correct':'Incorrect')+'</em></div>'+
+      '<div class="q">'+esc(q.q)+'</div></div></div>'+
+      '<div class="cmp"><div class="'+(ok?'g':'r')+'"><small>Your Answer</small><span>'+(a!==null?letter(a)+'. '+esc(q.options[a]):'Not answered')+'</span></div>'+
+      '<div class="g"><small>Correct Answer</small><span>'+letter(q.correct)+'. '+esc(q.options[q.correct])+'</span></div></div>'+
+      '<div class="expl"><small>Explanation</small><p>'+esc(q.explanation)+'</p><small>Why other options are wrong</small><p class="w">'+esc(q.whyWrong)+'</p></div></div>';
+  }).join("");
+  return '<div style="display:grid;gap:24px"><div class="grid-res">'+
+    '<section class="card"><div class="flag"></div><div class="pad">'+
+      '<div class="hero"><div><span class="lvl '+lv.cls+'"><span class="d"></span>'+lv.label+'</span><h2>You scored '+s+'/'+N+'</h2><p>'+pct+'% • '+lv.desc+' • Time '+fmt(S.elapsed)+'</p></div>'+
+      '<div class="levelbox"><small>CBC Level</small><b>'+lv.label+'</b><div class="bar"><i style="width:'+pct+'%"></i></div></div></div>'+
+      '<div class="sgrid">'+sc+'</div>'+
+      '<div class="btns"><button type="button" class="btn primary" data-a="email">\uD83D\uDCE7 Email Results to Teacher</button>'+
+      '<button type="button" class="btn ghost" data-a="download">\u2B07 Download Report</button>'+
+      '<button type="button" class="btn dark-b" data-a="retake">\u21BA Retake Quiz</button></div>'+
+      (S.emailed?'<div class="sent">Email app opened for <b>'+esc(TEACHER_EMAIL)+'</b>. If it did not open, copy the report on the right and paste it into an email.</div>':'')+
+    '</div></section>'+
+    '<aside class="side"><div class="box"><h4>Learner Summary</h4><div class="kv">'+
+      '<div><span>Name</span><b>'+esc(L.name)+'</b></div><div><span>School</span><b>'+esc(L.school||"-")+'</b></div>'+
+      '<div><span>Grade</span><b>'+esc(L.grade)+'</b></div><div><span>Admission</span><b>'+esc(L.admission||"N/A")+'</b></div>'+
+      '<div><span>Date</span><b>'+esc(new Date().toLocaleString("en-KE",{timeZone:"Africa/Nairobi"}))+'</b></div></div></div>'+
+    '<div class="box"><div class="copyrow"><h4>Teacher Report (copy)</h4><button type="button" data-a="copy">Copy Report</button></div>'+
+      '<textarea class="rep" id="rep" readonly>'+esc(report())+'</textarea>'+(S.copied?'<div class="okmsg">Copied to clipboard!</div>':'')+
+      '<div class="warn">This opens your default mail app. For silent sending, connect EmailJS or Formspree (see the note at the bottom of the page).</div></div></aside></div>'+
+    '<section class="card review"><div class="hd row-h"><h3 style="font-size:18px;font-weight:600">Detailed Review &amp; Explanations</h3><span class="tag">'+s+' correct • '+(N-s)+' to review</span></div>'+rv+'</section></div>';
+}
+function render(){
+  $("#chips").innerHTML = chips();
+  $("#app").innerHTML = S.view==="landing"?landing():S.view==="quiz"?quiz():result();
+}
+
+/* ---------- events ---------- */
+$("#app").addEventListener("input",e=>{
+  const id=e.target.id;
+  if(id==="f-name"){S.learner.name=e.target.value;const b=$("#startBtn");if(b)b.disabled=!e.target.value.trim();}
+  else if(id==="f-school") S.learner.school=e.target.value;
+  else if(id==="f-adm") S.learner.admission=e.target.value;
+});
+$("#app").addEventListener("keydown",e=>{
+  if(e.key==="Enter" && e.target.id==="f-name" && S.learner.name.trim()) startQuiz();
+});
+$("#app").addEventListener("click",e=>{
+  const t=e.target.closest("[data-a]"); if(!t) return;
+  const a=t.dataset.a;
+  if(a==="grade"){S.learner.grade=t.dataset.v;document.querySelectorAll(".gbtn").forEach(b=>b.classList.toggle("on",b.dataset.v===S.learner.grade));return;}
+  if(a==="start"){if(S.learner.name.trim()) startQuiz();return;}
+  if(a==="pick"){S.answers[S.idx]=+t.dataset.i;render();return;}
+  if(a==="nav"){S.idx=+t.dataset.i;S.hint=false;render();return;}
+  if(a==="prev"){S.idx=Math.max(0,S.idx-1);S.hint=false;render();return;}
+  if(a==="next"){S.idx=Math.min(N-1,S.idx+1);S.hint=false;render();return;}
+  if(a==="hint"){S.hint=!S.hint;render();return;}
+  if(a==="submit"){finish();return;}
+  if(a==="email"){emailTeacher();return;}
+  if(a==="retake"){S.view="landing";S.answers=Array(N).fill(null);S.idx=0;S.remaining=DURATION;S.emailed=false;S.copied=false;window.scrollTo(0,0);render();return;}
+  if(a==="download"){
+    const blob=new Blob([report()],{type:"text/plain"}), url=URL.createObjectURL(blob), l=document.createElement("a");
+    l.href=url; l.download="KJSEA-Report-"+S.learner.name.replace(/\s+/g,"-")+"-"+score()+"of"+N+".txt";
+    document.body.appendChild(l); l.click(); l.remove(); URL.revokeObjectURL(url); return;
+  }
+  if(a==="copy"){
+    const txt=report(), done=()=>{S.copied=true;render();setTimeout(()=>{S.copied=false;if(S.view==="result")render();},2000);};
+    if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(txt).then(done,()=>{$("#rep").select();document.execCommand("copy");done();});}
+    else{$("#rep").select();document.execCommand("copy");done();}
+  }
+});
+$("#setup-mail").textContent = TEACHER_EMAIL;
+$("#foot-mail").textContent = TEACHER_EMAIL+" receives results";
+render();
+</script>
+</body>
+</html>
