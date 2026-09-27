@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Grade 9 Math: Similarity, Enlargement & Straight Lines - CBC Quiz</title>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap');
+:root{
+  --teal:#0f766e;--teal-d:#0c5e58;--bg:#f6f7f5;--ink:#18181b;
+  --z50:#fafafa;--z100:#f4f4f5;--z200:#e4e4e7;--z300:#d4d4d8;--z500:#71717a;--z600:#52525b;--z700:#3f3f46;--z900:#18181b;
+  --em:#059669;--em50:#ecfdf5;--em200:#a7f3d0;--em800:#065f46;
+  --am:#d97706;--am50:#fffbeb;--am100:#fef3c7;--am200:#fde68a;--am800:#92400e;--am900:#78350f;
+  --red:#dc2626;--red50:#fef2f2;--red200:#fecaca;--red700:#b91c1c;
+  --teal50:#f0fdfa;--teal700:#0f766e;
+}
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%}
+body{background:var(--bg);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.5;-webkit-font-smoothing:antialiased}
+h1,h2,h3{margin:0;font-family:Poppins,Inter,system-ui,sans-serif;letter-spacing:-.02em}
+button{font:inherit;color:inherit;cursor:pointer}
+button:focus-visible,input:focus-visible,summary:focus-visible{outline:3px solid rgba(15,118,110,.45);outline-offset:2px}
+.topbar{position:sticky;top:0;z-index:30;background:#fff;border-bottom:1px solid var(--z200)}
+.topbar-in{max-width:72rem;margin:0 auto;padding:0 16px;height:64px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.brand{display:flex;align-items:center;gap:12px}
+.logo{width:36px;height:36px;border-radius:8px;background:var(--teal);color:#fff;display:flex;align-items:center;justify-content:center;font:700 16px Poppins,Inter,sans-serif}
+.brand b{display:block;font:700 15px Poppins,Inter,sans-serif;letter-spacing:-.01em}
+.brand small{display:block;font-size:11px;color:var(--z500);font-weight:500}
+.chips{display:flex;align-items:center;gap:8px}
+.chip{font-size:12px;border:1px solid var(--z200);background:var(--z50);border-radius:999px;padding:6px 12px;display:flex;align-items:center;gap:8px}
+.chip .dot{width:8px;height:8px;border-radius:50%;background:var(--em)}
+.chip.timer{font-weight:600;background:var(--z900);color:#fff;border-color:var(--z900)}
+.chip.timer.low{background:var(--red50);color:var(--red700);border-color:var(--red200)}
+.wrap{max-width:72rem;margin:0 auto;padding:28px 16px 24px}
+.card{background:#fff;border:1px solid var(--z200);border-radius:20px;box-shadow:0 12px 40px -16px rgba(0,0,0,.1);overflow:hidden}
+.flag{height:6px;background:linear-gradient(to right,#000,#dc2626,#16a34a)}
+.pad{padding:28px}
+.pad-s{padding:20px}
+.grid-landing{display:grid;grid-template-columns:1.1fr .9fr;gap:24px;align-items:start}
+.grid-quiz{display:grid;grid-template-columns:1fr 320px;gap:24px;align-items:start}
+.grid-res{display:grid;grid-template-columns:1.2fr .8fr;gap:24px;align-items:start}
+.pill{display:inline-block;background:rgba(15,118,110,.1);color:var(--teal);font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;border-radius:999px;padding:4px 12px;margin-bottom:16px}
+h1{font-size:32px;line-height:1.1;font-weight:700}
+h1 .teal{color:var(--teal)}
+.lead{margin:12px 0 0;font-size:14px;color:var(--z600);max-width:52ch}
+.subjgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:24px}
+.subj{border:1px solid var(--z200);background:rgba(250,250,250,.7);border-radius:12px;padding:12px}
+.ico{width:28px;height:28px;border-radius:50%;color:#fff;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;flex:none}
+.subj b{display:block;margin-top:8px;font-size:12px}
+.subj span{font-size:11px;color:var(--z500)}
+.notice{margin-top:24px;font-size:12px;color:var(--z600);background:var(--am50);border:1px solid var(--am200);border-radius:8px;padding:8px 12px}
+.notice b{color:var(--ink)}
+.dark{margin:0 28px 28px;border-radius:16px;background:var(--z900);color:#f4f4f5;padding:18px;display:flex;gap:16px;font-size:12px;line-height:1.5}
+.dark .ic{width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;flex:none}
+.dark b{color:#fff;display:block}
+.dark span{color:#d4d4d8}
+.row-h{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.row-h h2{font-size:18px;font-weight:600}
+.tag{font-size:11px;padding:4px 10px;border-radius:999px;background:var(--z100);border:1px solid var(--z200)}
+label.l{display:block;font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--z600)}
+.field{margin-top:18px}
+.inp{margin-top:6px;width:100%;border-radius:12px;border:1px solid var(--z200);background:rgba(250,250,250,.5);padding:12px 16px;font-size:14px;outline:none;transition:border-color .15s,box-shadow .15s,background .15s}
+.inp:focus{background:#fff;border-color:var(--teal);box-shadow:0 0 0 4px rgba(15,118,110,.1)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.grades{margin-top:6px;display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.gbtn{border-radius:12px;border:1px solid var(--z200);background:var(--z50);padding:10px 12px;font-size:13px;font-weight:600;color:var(--z700)}
+.gbtn.on{background:var(--teal);border-color:var(--teal);color:#fff}
+.btn{border:0;border-radius:12px;padding:12px 20px;font-size:13px;font-weight:600}
+.btn.primary{background:var(--teal);color:#fff}
+.btn.primary:hover{background:var(--teal-d)}
+.btn.primary:disabled{background:var(--z300);color:var(--z500);cursor:not-allowed}
+.btn.dark-b{background:var(--z900);color:#fff}
+.btn.dark-b:hover{background:#000}
+.btn.ghost{background:#fff;border:1px solid var(--z200)}
+.btn.ghost:hover{background:var(--z50)}
+.btn.amber{background:#f59e0b;color:var(--z900);font-weight:700}
+.btn.amber:hover{background:var(--am)}
+.btn.full{width:100%;padding:14px}
+.fine{margin-top:12px;font-size:11px;color:var(--z500);text-align:center}
+.what{margin-top:24px;border-top:1px solid var(--z100);padding-top:16px}
+.what h4{margin:0 0 8px;font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--z500)}
+.what ul{margin:0;padding:0;list-style:none;font-size:12px;color:var(--z600)}
+.what li{display:flex;gap:8px;margin-top:8px}
+.what li i{color:var(--em);font-style:normal}
+.qhead{padding:16px 28px;border-bottom:1px solid var(--z100);display:flex;align-items:center;justify-content:space-between;gap:16px}
+.qhead .who{display:flex;align-items:center;gap:12px}
+.qhead small{display:block;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--z500)}
+.qhead b{font-size:13px}
+.bar{height:8px;background:var(--z100);border-radius:999px;overflow:hidden}
+.bar > i{display:block;height:100%;background:var(--teal);transition:width .2s}
+.qhead .bar{width:160px}
+.qhead .n{font-size:11px;font-weight:500;color:var(--z500)}
+.qhead .pr{display:flex;align-items:center;gap:8px}
+.qbody{padding:28px}
+.dots{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:20px}
+.dotb{width:32px;height:32px;border-radius:50%;font-size:12px;font-weight:600;border:1px solid var(--z200);background:#fff;color:var(--z500)}
+.dotb.done{background:var(--em50);border-color:var(--em200);color:var(--em800)}
+.dotb.cur{background:var(--z900);border-color:var(--z900);color:#fff}
+.qtext{font:600 20px/1.35 Poppins,Inter,sans-serif;letter-spacing:-.01em}
+.hintrow{margin-top:20px;display:flex;align-items:center;gap:8px}
+.hbtn{font-size:12px;font-weight:600;padding:6px 12px;border-radius:999px;border:1px solid var(--z200);background:var(--z50);color:var(--z700)}
+.hbtn.on{background:var(--am100);border-color:var(--am200);color:var(--am800)}
+.ans-tag{font-size:11px;color:var(--em800);background:var(--em50);border:1px solid var(--em200);border-radius:999px;padding:4px 10px}
+.hint{margin-top:12px;border-radius:12px;background:var(--am50);border:1px solid var(--am200);padding:12px 16px;font-size:13px;color:var(--am900)}
+.opts{margin-top:20px;display:grid;gap:12px}
+.opt{text-align:left;border-radius:14px;border:1px solid var(--z200);background:#fff;padding:14px 16px;display:flex;align-items:center;gap:12px;transition:background .15s,border-color .15s}
+.opt:hover{background:rgba(250,250,250,.8);border-color:var(--z300)}
+.opt .let{width:32px;height:32px;border-radius:50%;border:1px solid var(--z200);background:var(--z50);color:var(--z600);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex:none}
+.opt .tx{font-size:14px;line-height:1.4}
+.opt.sel{background:var(--teal);border-color:var(--teal);color:#fff;box-shadow:0 6px 20px -8px rgba(15,118,110,.6)}
+.opt.sel .let{background:#fff;color:var(--teal);border-color:#fff}
+.opt.sel .tx{font-weight:500}
+.navrow{margin-top:28px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.navrow .btn:disabled{opacity:.4;cursor:not-allowed}
+.side{display:grid;gap:16px}
+.box{background:#fff;border:1px solid var(--z200);border-radius:20px;padding:20px}
+.box h4{margin:0;font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--z500)}
+.box .nm{margin-top:8px;font-weight:600;font-size:14px}
+.box .sub{font-size:12px;color:var(--z500)}
+.mini{margin-top:16px;display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.mini div{border:1px solid var(--z200);background:var(--z50);border-radius:12px;padding:10px;text-align:center}
+.mini small{display:block;font-size:10px;text-transform:uppercase;letter-spacing:.04em;color:var(--z500)}
+.mini b{font-size:14px}
+.prog{margin-top:16px}
+.prog .t{display:flex;justify-content:space-between;font-size:11px;color:var(--z500);margin-bottom:4px}
+.warn{margin-top:12px;font-size:11px;color:var(--z500)}
+.tip{background:var(--teal);color:#fff;border-radius:20px;padding:20px}
+.tip small{display:block;font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;opacity:.8}
+.tip p{margin:8px 0 0;font-size:13px;line-height:1.5}
+.lvl{display:inline-flex;align-items:center;gap:8px;border-radius:999px;padding:4px 12px;font-size:11px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;border:1px solid}
+.lvl .d{width:8px;height:8px;border-radius:50%}
+.lvl.exc{background:var(--em50);color:var(--em800);border-color:var(--em200)}.lvl.exc .d{background:var(--em)}
+.lvl.meet{background:var(--teal50);color:var(--teal700);border-color:#99f6e4}.lvl.meet .d{background:var(--teal)}
+.lvl.app{background:var(--am50);color:var(--am800);border-color:var(--am200)}.lvl.app .d{background:var(--am)}
+.lvl.below{background:var(--red50);color:var(--red700);border-color:var(--red200)}.lvl.below .d{background:var(--red)}
+.hero{display:flex;flex-wrap:wrap;align-items:flex-start;justify-content:space-between;gap:16px}
+.hero h2{margin-top:12px;font-size:28px;line-height:1}
+.hero p{margin:4px 0 0;font-size:14px;color:var(--z600)}
+.levelbox{border-radius:16px;background:var(--z900);color:#fff;padding:16px 20px;min-width:150px}
+.levelbox small{display:block;font-size:11px;text-transform:uppercase;letter-spacing:.1em;opacity:.7}
+.levelbox b{display:block;margin-top:4px;font:700 18px/1.2 Poppins,Inter,sans-serif}
+.levelbox .bar{margin-top:8px;height:6px;background:rgba(255,255,255,.2)}
+.levelbox .bar i{background:#fff}
+.sgrid{margin-top:24px;display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.sc{border:1px solid var(--z200);border-radius:12px;padding:12px}
+.sc small{font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--z500)}
+.sc b{display:block;margin-top:4px;font-size:16px}
+.sc .bar{margin-top:8px;height:6px}
+.btns{margin-top:24px;display:flex;flex-wrap:wrap;gap:8px}
+.sent{margin-top:16px;border-radius:12px;background:var(--em50);border:1px solid var(--em200);padding:12px 16px;font-size:12px;color:#064e3b}
+.kv{margin-top:12px;display:grid;gap:8px;font-size:13px}
+.kv div{display:flex;justify-content:space-between;gap:12px}
+.kv span{color:var(--z500)}
+.kv b{font-weight:600;text-align:right}
+.copyrow{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.copyrow button{font-size:11px;font-weight:600;padding:4px 10px;border-radius:999px;border:0;background:var(--z900);color:#fff}
+textarea.rep{margin-top:12px;width:100%;height:220px;border-radius:12px;border:1px solid var(--z200);background:var(--z50);padding:12px;font:11px/1.4 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;resize:vertical}
+.okmsg{margin-top:8px;font-size:11px;font-weight:600;color:var(--em)}
+.review{margin-top:24px}
+.review .hd{padding:20px 28px;border-bottom:1px solid var(--z100)}
+.rv{padding:24px 28px;border-top:1px solid var(--z100)}
+.rv:first-of-type{border-top:0}
+.rv .top{display:flex;align-items:flex-start;gap:12px}
+.mark{width:32px;height:32px;border-radius:50%;color:#fff;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex:none;margin-top:2px}
+.mark.ok{background:var(--em)}.mark.no{background:var(--red)}
+.rv .meta{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.rv .meta small{font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--z500)}
+.rv .meta em{font-style:normal;font-size:10px;font-weight:600;padding:2px 8px;border-radius:999px;border:1px solid}
+.rv .meta em.ok{background:var(--em50);border-color:var(--em200);color:var(--em800)}
+.rv .meta em.no{background:var(--red50);border-color:var(--red200);color:var(--red700)}
+.rv .q{margin-top:4px;font-weight:500;font-size:15px;line-height:1.5;max-width:70ch}
+.cmp{margin-top:16px;display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.cmp div{border:1px solid;border-radius:12px;padding:12px}
+.cmp small{display:block;font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;opacity:.75}
+.cmp span{display:block;margin-top:4px;font-size:13px;font-weight:500}
+.cmp .g{background:var(--em50);border-color:var(--em200);color:#064e3b}
+.cmp .r{background:var(--red50);border-color:var(--red200)}
+.expl{margin-top:16px;border-radius:12px;background:var(--z50);border:1px solid var(--z200);padding:16px}
+.expl small{display:block;font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--z500)}
+.expl p{margin:4px 0 0;font-size:13px;line-height:1.6;color:#27272a}
+.expl p.w{font-size:12px;color:var(--z600);line-height:1.5}
+.expl small + p + small{margin-top:12px}
+details.setup{max-width:72rem;margin:0 auto 24px;padding:0 16px}
+details.setup > div{background:#fff;border:1px solid var(--z200);border-radius:12px;padding:12px 16px}
+details.setup summary{font-size:12px;font-weight:600;cursor:pointer}
+details.setup p{margin:8px 0 0;font-size:12px;color:var(--z600)}
+footer{max-width:72rem;margin:0 auto;padding:16px;border-top:1px solid var(--z200);font-size:11px;color:var(--z500);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+@media (max-width:900px){
+  .grid-landing,.grid-quiz,.grid-res{grid-template-columns:1fr}
+  .chip.cnt{display:none}
+}
+@media (max-width:560px){
+  h1{font-size:26px}.pad{padding:20px}.two,.cmp{grid-template-columns:1fr}
+  .qhead{padding:14px 18px}.qbody{padding:20px 18px}.qtext{font-size:18px}
+  .qhead .bar{width:90px}.dark{margin:0 20px 20px}.rv,.review .hd{padding:20px 18px}
+  .subjgrid,.sgrid{gap:8px}
+}
+
+.canvas-wrap{background:#fff;border:1px solid var(--z200);border-radius:16px;padding:16px;display:flex;flex-direction:column;align-items:center;gap:12px}
+canvas{border:1px solid #e4e4e7;border-radius:8px;background:#fcfcfc;cursor:crosshair;touch-action:none}
+.coord-display{font-size:13px;font-weight:600;color:var(--z700);background:var(--z50);border:1px solid var(--z200);border-radius:999px;padding:6px 14px}
+.math{overflow-x:auto;font-size:14px}
+
+</style>
+</head>
+<body>
+<div class="topbar"><div class="topbar-in"><div class="brand"><div class="logo">M9</div><div><b>Grade 9 Math CBC</b><small>Similarity • Enlargement • Coordinates • Straight Lines</small></div></div><div class="chips" id="chips"></div></div></div>
+
+<div class="wrap" id="app"></div>
+
+<details class="setup"><summary>Setup for teacher</summary><div><p>Teacher email: <b id="setup-mail"></b>. This page uses mailto. For silent sending, connect EmailJS in emailTeacher(). Data stays in memory only.</p>
+<p>TIP: LSF = Image/Object, ASF = LSF squared, VSF = LSF cubed. Center formula: Image - Center = k(Object - Center). For straight line: m=(y2-y1)/(x2-x1), y=mx+c.</p></div></details>
+
+<footer><span>Grade 9 Math CBC - Similarity & Enlargement + Straight Lines - Interactive Quiz</span><span id="foot-mail"></span></footer>
+
+<script>
+const TEACHER_EMAIL = "allansaboke@gmail.com";
+const TIP_TEXT = "For similarity: LSF = Image/Object, ASF = LSF squared, VSF = LSF cubed. For centre: Image - Center = k(Object - Center). For lines: m = (y2-y1)/(x2-x1), then y=mx+c. For points: x first (horizontal), y second (vertical).";
+const DURATION = 3600;
+const QUESTIONS = [
+ {
+  "type": "mcq",
+  "subject": "Linear Scale Factor",
+  "q": "Two triangles, ABC and PQR, are similar. Triangle ABC has a base of 8 cm and an area of 24 cm². The corresponding base of the larger triangle PQR is 12 cm. Calculate the Linear Scale Factor (LSF) and the height of triangle PQR.",
+  "options": [
+   "LSF = 1.5, Height = 9 cm",
+   "LSF = 0.67, Height = 4 cm",
+   "LSF = 1.5, Height = 6 cm",
+   "LSF = 2, Height = 12 cm"
+  ],
+  "correct": 0,
+  "explanation": "LSF = Image/Object = 12/8 = 1.5. Area ABC = 1/2*base*height => 24 = 1/2*8*h => h=6 cm. New Height = 6*1.5 = 9 cm.",
+  "explanationMath": "$$\\text{LSF} = \\frac{12}{8} = 1.5$$ $$24 = \\frac12 \\times 8 \\times h \\implies h=6\\text{ cm}$$ $$\\text{New }h = 6 \\times 1.5 = 9\\text{ cm}$$",
+  "whyWrong": "Option B uses inverse LSF (8/12). C forgets to multiply height by LSF. D uses LSF=2 incorrectly.",
+  "hint": "First find LSF = Image length / Object length, then find original height from area formula: Area = 1/2*base*height."
+ },
+ {
+  "type": "mcq",
+  "subject": "Area Scale Factor",
+  "q": "The surface areas of two similar Kenyan traditional gourds (calabashes) are 135 cm² and 240 cm². If the height of the smaller gourd is 18 cm, calculate the height of the larger gourd.",
+  "options": [
+   "24 cm",
+   "32 cm",
+   "18 cm",
+   "27 cm"
+  ],
+  "correct": 0,
+  "explanation": "ASF = 240/135 = 16/9. LSF = sqrt(ASF) = 4/3. Larger height = 18 * 4/3 = 24 cm.",
+  "explanationMath": "$$\\text{ASF}=\\frac{240}{135}=\\frac{16}{9}$$ $$\\text{LSF}=\\sqrt{\\text{ASF}}=\\sqrt{\\frac{16}{9}}=\\frac43$$ $$\\text{Larger Height}=18\\times\\frac43=24\\text{ cm}$$",
+  "whyWrong": "32 cm cubes LSF instead of square root, 18 cm ignores scale, 27 cm uses linear ratio of areas directly.",
+  "hint": "Area Scale Factor = (Linear Scale Factor)². So LSF = sqrt(ASF)."
+ },
+ {
+  "type": "mcq",
+  "subject": "Volume Scale Factor",
+  "q": "A cylindrical water tank has a capacity of 1,200 litres. A similar tank is constructed such that its linear dimensions are doubled (Scale Factor = 2). What is the capacity of the larger water tank?",
+  "options": [
+   "2,400 litres",
+   "9,600 litres",
+   "3,600 litres",
+   "4,800 litres"
+  ],
+  "correct": 1,
+  "explanation": "VSF = LSF³ = 2³ = 8. Larger capacity = 1200×8 = 9600 litres. Capacity scales as volume.",
+  "explanationMath": "$$\\text{LSF}=2$$ $$\\text{VSF}= \\text{LSF}^3 = 2^3 = 8$$ $$\\text{Larger}=1200\\times 8 = 9600\\text{ L}$$",
+  "whyWrong": "2400 uses LSF not cubed, 3600 confuses with area, 4800 uses square.",
+  "hint": "Capacity is volume, so Volume Scale Factor = (Linear Scale Factor)³."
+ },
+ {
+  "type": "mcq",
+  "subject": "Center of Enlargement",
+  "q": "A triangle with vertex A(2,3) is mapped onto A'(5,7) by an enlargement with scale factor 3. Determine the coordinates of the center of enlargement.",
+  "options": [
+   "(0.5, 1)",
+   "(1, 0.5)",
+   "(0, 1)",
+   "(1, 1)"
+  ],
+  "correct": 0,
+  "explanation": "Using Image - Center = k(Object - Center): 5-x=3(2-x) => x=0.5. 7-y=3(3-y)=> y=1. Center (0.5,1).",
+  "explanationMath": "$$\\text{Let }C(x,y): A' - C = k(A-C)$$ $$5-x = 3(2-x) \\implies x=0.5$$ $$7-y = 3(3-y) \\implies y=1$$ $$C = (0.5,1)$$",
+  "whyWrong": "Other options swap x,y or solve with wrong formula Image = k×Object.",
+  "hint": "Use formula: (Image - Center) = k × (Object - Center). Solve for x and y separately."
+ },
+ {
+  "type": "point",
+  "subject": "Coordinate Geometry",
+  "q": "On the Cartesian plane below, click to place the point (4, 6). Remember: first number is x (horizontal), second is y (vertical).",
+  "target": {
+   "x": 4,
+   "y": 6
+  },
+  "options": [],
+  "correct": 0,
+  "explanation": "Point (4,6) is 4 units right on x-axis and 6 units up on y-axis. Count from origin (0,0).",
+  "explanationMath": "$$x=4 \\rightarrow \\text{move 4 along x-axis}$$ $$y=6 \\rightarrow \\text{move 6 up y-axis}$$",
+  "whyWrong": "Swapping gives (6,4) which is different. Always (x, y).",
+  "hint": "Move 4 steps along x-axis to the right, then 6 steps up along y-axis."
+ },
+ {
+  "type": "point",
+  "subject": "Coordinate Geometry",
+  "q": "On the Cartesian plane below, click to place the point (7, 4).",
+  "target": {
+   "x": 7,
+   "y": 4
+  },
+  "options": [],
+  "correct": 0,
+  "explanation": "Point (7,4) means x=7 (7 right), y=4 (4 up).",
+  "explanationMath": "$$(7,4): x=7, y=4$$",
+  "whyWrong": "Common error is (4,7). Always x first, then y.",
+  "hint": "x=7 is near the right edge, y=4 is middle height."
+ },
+ {
+  "type": "point",
+  "subject": "Coordinate Geometry",
+  "q": "On the Cartesian plane below, click to place the point (3, 5).",
+  "target": {
+   "x": 3,
+   "y": 5
+  },
+  "options": [],
+  "correct": 0,
+  "explanation": "Go 3 units on x, 5 on y. Intersection is your point.",
+  "explanationMath": "$$(3,5): 3\\text{ on }x, 5\\text{ on }y$$",
+  "whyWrong": "Placing at (5,3) is swapped coordinates.",
+  "hint": "x is horizontal distance, y is vertical."
+ },
+ {
+  "type": "mcq",
+  "subject": "Equation of Straight Line",
+  "q": "Find the equation of the straight line passing through points A(1,2) and B(3,8) in the form y = mx + c.",
+  "options": [
+   "y = 3x - 1",
+   "y = 3x + 2",
+   "y = 2x + 1",
+   "y = 4x - 2"
+  ],
+  "correct": 0,
+  "explanation": "m = (8-2)/(3-1)=6/2=3. Use y=mx+c: 2=3*1+c => c=-1. So y=3x-1.",
+  "explanationMath": "$$m = \\frac{y_2-y_1}{x_2-x_1}= \\frac{8-2}{3-1}= \\frac6{2}=3$$ $$2 = 3(1)+c \\implies c=-1$$ $$y=3x-1$$",
+  "whyWrong": "B uses wrong c, C miscalculates gradient as 2, D uses 4.",
+  "hint": "First calculate gradient m = (y2-y1)/(x2-x1), then find c using one point."
+ },
+ {
+  "type": "mcq",
+  "subject": "Equation of Straight Line",
+  "q": "A line has gradient 2 and passes through point (4,6). Find its equation in y=mx+c form and its y-intercept.",
+  "options": [
+   "y = 2x - 2, intercept -2",
+   "y = 2x + 2, intercept 2",
+   "y = 2x - 6, intercept -6",
+   "y = 2x + 6, intercept 6"
+  ],
+  "correct": 0,
+  "explanation": "y-6=2(x-4) => y=2x-8+6=2x-2. y-intercept is -2 (where x=0).",
+  "explanationMath": "$$y-y_1=m(x-x_1)$$ $$y-6=2(x-4)$$ $$y=2x-2$$ $$\\text{y-intercept }= -2$$",
+  "whyWrong": "Other options add instead of subtract or miscalculate 2*4.",
+  "hint": "Use point-slope form: y - y1 = m(x - x1), then simplify to y=mx+c."
+ }
+];
+
+const N = QUESTIONS.length;
+const SUBJECTS = [...new Set(QUESTIONS.map(q=>q.subject))];
+let S = {
+  view: "landing",
+  learner: {name:"", school:"", grade:"Grade 9", admission:""},
+  answers: Array(N).fill(null),
+  idx: 0,
+  remaining: DURATION,
+  hint: false,
+  emailed: false,
+  copied: false,
+  elapsed: 0,
+  timer: null
+};
+
+const $ = s=>document.querySelector(s);
+function esc(t){return (t||"").replace(/[&<>"]/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[m]))}
+function letter(i){return String.fromCharCode(65+i)}
+function fmt(sec){let m=Math.floor(sec/60), s=sec%60; return m+"m "+s+"s"}
+
+function score(){
+  let sc=0;
+  QUESTIONS.forEach((q,i)=>{
+    if(q.type==="mcq"){ if(S.answers[i]===q.correct) sc++; }
+    else if(q.type==="point"){ 
+      let a=S.answers[i];
+      if(a){
+        let dx=Math.abs(a.x - q.target.x), dy=Math.abs(a.y - q.target.y);
+        if(dx<0.6 && dy<0.6) sc++;
+      }
+    }
+  });
+  return sc;
+}
+function subjStats(sub){
+  let tot=0,corr=0;
+  QUESTIONS.forEach((q,i)=>{
+    if(q.subject!==sub) return; tot++;
+    if(q.type==="mcq" && S.answers[i]===q.correct) corr++;
+    if(q.type==="point" && S.answers[i]){
+      let dx=Math.abs(S.answers[i].x - q.target.x), dy=Math.abs(S.answers[i].y - q.target.y);
+      if(dx<0.6 && dy<0.6) corr++;
+    }
+  });
+  return {total:tot, correct:corr};
+}
+function level(pct){
+  if(pct>=80) return {label:"Exceeding Expectation", cls:"exc", desc:"Excellent mastery"};
+  if(pct>=60) return {label:"Meeting Expectation", cls:"meet", desc:"Good understanding"};
+  if(pct>=40) return {label:"Approaching Expectation", cls:"app", desc:"Needs practice"};
+  return {label:"Below Expectation", cls:"below", desc:"Requires support"};
+}
+
+function chips(){
+  if(S.view==="landing") return '<div class="chip"><span class="dot"></span>'+N+' Questions</div><div class="chip">Interactive + MCQ</div>';
+  let rem=S.remaining, low=rem<300;
+  let a=S.answers.filter(v=>v!==null).length;
+  if(S.view==="result") return '<div class="chip cnt">Teacher copy: '+esc(TEACHER_EMAIL)+'</div>';
+  return '<div class="chip timer '+(low?'low':'')+'">⏱ '+fmt(rem)+'</div><div class="chip">'+a+'/'+N+' answered</div>';
+}
+
+function landing(){
+  const colors=["#0f766e","#059669","#d97706","#dc2626","#7c3aed"];
+  const cards = SUBJECTS.map((sub,i)=>{
+    return '<div class="subj"><div class="ico" style="background:'+colors[i%colors.length]+'">'+(i+1)+'</div><b>'+esc(sub)+'</b><span>'+QUESTIONS.filter(q=>q.subject===sub).length+' Qs</span></div>';
+  }).join("");
+  return `
+  <div class="grid-landing">
+    <section class="card"><div class="flag"></div><div class="pad">
+      <span class="pill">Grade 9 • CBC • Mathematics</span>
+      <h1>Similarity, Enlargement <span class="teal">& Straight Lines</span> Quiz</h1>
+      <p class="lead">9 questions: 4 on LSF/ASF/VSF & Centre, 3 interactive coordinate placements (4,6), (7,4), (3,5), 2 on equations of straight lines. Includes MathJax step-by-step solutions.</p>
+      <div class="subjgrid">`+cards+`</div>
+      <div class="notice">🔒 Results will be shared with your teacher at <b>`+esc(TEACHER_EMAIL)+`</b> on submit. Clicking on canvas places your point.</div>
+    </div>
+    <div class="dark"><div class="ic">⚡</div><div><b>How it works</b><span>Timer 60 mins. For canvas Qs, click the grid to place (x,y). You can re-click to adjust. For MCQ, pick one answer. Hints available. Math rendered with MathJax.</span></div></div>
+  </section>
+  <section class="card"><div class="pad">
+    <div class="row-h"><h2>Learner Details</h2><span class="tag">`+N+` Qs • 60 min</span></div>
+    <div class="field"><label class="l">Full Name *</label><input id="f-name" class="inp" placeholder="e.g. Brian Otieno"></div>
+    <div class="two"><div class="field"><label class="l">School</label><input id="f-school" class="inp" placeholder="e.g. Kalimoni JSS"></div>
+    <div class="field"><label class="l">Admission No.</label><input id="f-adm" class="inp" placeholder="Optional"></div></div>
+    <div class="field"><label class="l">Grade</label><div class="grades"><button class="gbtn on" data-a="grade" data-v="Grade 9">Grade 9</button><button class="gbtn" data-a="grade" data-v="Grade 8">Grade 8</button><button class="gbtn" data-a="grade" data-v="Grade 7">Grade 7</button></div></div>
+    <button id="startBtn" class="btn primary full" data-a="start" disabled style="margin-top:20px">Start Quiz →</button>
+    <div class="fine">By starting, you agree your results will be emailed to teacher for CBC assessment.</div>
+    <div class="what"><h4>What you'll practice</h4><ul>
+      <li><i>✓</i> LSF, Area & Volume Scale Factors</li>
+      <li><i>✓</i> Finding Centre of Enlargement</li>
+      <li><i>✓</i> Interactive: Placing (4,6), (7,4), (3,5) on plane</li>
+      <li><i>✓</i> Gradient & Equation y=mx+c, y-intercept</li>
+    </ul></div>
+  </div></section></div>`;
+}
+
+function quiz(){
+  const q = QUESTIONS[S.idx];
+  const isPoint = q.type==="point";
+  let dots = QUESTIONS.map((_,i)=>{
+    let done=S.answers[i]!==null;
+    let cur=i===S.idx;
+    return '<button class="dotb '+(cur?'cur':'')+' '+(done?'done':'')+'" data-a="nav" data-i="'+i+'">'+(i+1)+'</button>';
+  }).join("");
+
+  let body="";
+  if(isPoint){
+    let ans=S.answers[S.idx];
+    let display = ans ? 'Placed at ('+ans.x+', '+ans.y+')' : "No point placed yet - click grid";
+    let targetInfo = '<div class="ans-tag">'+esc(display)+'</div>';
+    body = `
+      <div class="qtext">`+(S.idx+1)+`. `+esc(q.q)+`</div>
+      <div class="hintrow"><button class="hbtn `+(S.hint?'on':'')+`" data-a="hint">💡 Hint</button> `+targetInfo+`</div>
+      `+(S.hint? '<div class="hint">'+esc(q.hint)+'</div>' : '')+`
+      <div class="canvas-wrap" style="margin-top:20px">
+        <div class="coord-display" id="coordDisplay">`+display+` - Click grid to place / adjust</div>
+        <canvas id="plane" width="420" height="420"></canvas>
+        <small style="color:var(--z500);font-size:11px">Grid: x 0→10 (left to right), y 0→10 (bottom to top). Click anywhere to place. Orange dot is your answer.</small>
+      </div>
+    `;
+  } else {
+    let opts = q.options.map((op,i)=>{
+      let sel=S.answers[S.idx]===i;
+      return '<button class="opt '+(sel?'sel':'')+'" data-a="pick" data-i="'+i+'"><span class="let">'+letter(i)+'</span><span class="tx">'+esc(op)+'</span></button>';
+    }).join("");
+    body = `
+      <div class="qtext">`+(S.idx+1)+`. `+esc(q.q)+`</div>
+      <div class="hintrow"><button class="hbtn `+(S.hint?'on':'')+`" data-a="hint">💡 Hint</button> `+(S.answers[S.idx]!==null? '<span class="ans-tag">Answered: '+letter(S.answers[S.idx])+'</span>' : '')+`</div>
+      `+(S.hint? '<div class="hint">'+esc(q.hint)+'</div>' : '')+`
+      <div class="opts">`+opts+`</div>
+    `;
+  }
+
+  let a = S.answers.filter(v=>v!==null).length;
+  let mini = SUBJECTS.map(sub=>{
+    const t=subjStats(sub); return '<div><small>'+esc(sub)+'</small><b>'+t.correct+'/'+t.total+'</b></div>';
+  }).join("");
+
+  return `
+  <div class="grid-quiz">
+    <section class="card"><div class="qhead"><div class="who"><div><small>`+esc(q.subject)+` • `+(q.type==="point"?'Interactive':"MCQ")+`</small><b>Q`+(S.idx+1)+` of `+N+`</b></div></div><div class="pr"><div class="n">`+a+`/`+N+`</div><div class="bar"><i style="width:`+((S.idx+1)/N*100)+`%"></i></div></div></div>
+      <div class="qbody"><div class="dots">`+dots+`</div>`+body+`
+      <div class="navrow"><button type="button" class="btn ghost" data-a="prev" `+(S.idx===0?'disabled':'')+`>← Previous</button>
+      `+(S.idx<N-1?'<button type="button" class="btn dark-b" data-a="next">Next →</button>':'<button type="button" class="btn primary" data-a="submit">Finish & Submit</button>')+`
+      </div></div>
+    </section>
+    <aside class="side"><div class="box"><h4>Learner</h4><div class="nm">`+esc(S.learner.name)+`</div><div class="sub">`+esc(S.learner.school||"-")+` • `+esc(S.learner.grade)+`</div>
+      <div class="mini">`+mini+`</div>
+      <div class="prog"><div class="t"><span>Progress</span><span>`+a+`/`+N+`</span></div><div class="bar"><i style="width:`+(a/N*100)+`%"></i></div></div>
+      <button type="button" class="btn amber full" style="margin-top:16px;padding:10px" data-a="submit">Submit Quiz</button>
+      <div class="warn">Unanswered will be marked wrong. Click numbers to jump. For point Qs, click grid.</div></div>
+      <div class="tip"><small>CBC Tip</small><p>`+TIP_TEXT+`</p></div>
+    </aside>
+  </div>`;
+}
+
+function drawPlane(){
+  const q = QUESTIONS[S.idx];
+  if(q.type!=="point") return;
+  const canvas = document.getElementById("plane");
+  if(!canvas) return;
+  const ctx = canvas.getContext("2d");
+  const W=canvas.width, H=canvas.height;
+  const pad=40, gridSize=(W-2*pad)/10;
+  
+  ctx.clearRect(0,0,W,H);
+  ctx.fillStyle="#fcfcfc"; ctx.fillRect(0,0,W,H);
+  
+  ctx.strokeStyle="#e4e4e7"; ctx.lineWidth=0.8;
+  for(let i=0;i<=10;i++){
+    let x=pad+i*gridSize;
+    ctx.beginPath(); ctx.moveTo(x,pad); ctx.lineTo(x,H-pad); ctx.stroke();
+    let y=pad+i*gridSize;
+    ctx.beginPath(); ctx.moveTo(pad,y); ctx.lineTo(W-pad,y); ctx.stroke();
+  }
+  ctx.strokeStyle="#18181b"; ctx.lineWidth=2;
+  ctx.beginPath(); ctx.moveTo(pad, H-pad); ctx.lineTo(W-pad, H-pad); ctx.stroke();
+  ctx.beginPath(); ctx.moveTo(pad, H-pad); ctx.lineTo(pad, pad); ctx.stroke();
+  
+  ctx.fillStyle="#52525b"; ctx.font="11px Inter"; ctx.textAlign="center";
+  for(let i=0;i<=10;i++){
+    let x=pad+i*gridSize;
+    ctx.fillText(i.toString(), x, H-pad+14);
+  }
+  ctx.textAlign="right";
+  for(let i=0;i<=10;i++){
+    let y=H-pad - i*gridSize;
+    if(i>0) ctx.fillText(i.toString(), pad-6, y+3);
+  }
+  ctx.fillStyle="#18181b"; ctx.font="bold 12px Inter";
+  ctx.fillText("x", W-pad+6, H-pad+4);
+  ctx.fillText("y", pad-2, pad-8);
+  ctx.fillText("O", pad-8, H-pad+4);
+  
+  let ans=S.answers[S.idx];
+  if(ans){
+    let px=pad + ans.x*gridSize;
+    let py=H-pad - ans.y*gridSize;
+    ctx.fillStyle="#f59e0b";
+    ctx.beginPath(); ctx.arc(px, py, 7, 0, Math.PI*2); ctx.fill();
+    ctx.strokeStyle="#fff"; ctx.lineWidth=2; ctx.stroke();
+    ctx.fillStyle="#18181b"; ctx.font="bold 11px Inter"; ctx.textAlign="left";
+    ctx.fillText('('+ans.x+','+ans.y+')', px+10, py-8);
+  }
+}
+
+function result(){
+  const L=S.learner, s=score(), pct=Math.round(s/N*100), lv=level(pct);
+  const sc=SUBJECTS.map(sub=>{const t=subjStats(sub);return '<div class="sc"><small>'+esc(sub)+'</small><b>'+t.correct+'/'+t.total+'</b><div class="bar"><i style="width:'+(t.correct/t.total*100)+'%"></i></div></div>';}).join("");
+  const rv=QUESTIONS.map((q,i)=>{
+    let ok=false; let userAnsText="Not answered";
+    if(q.type==="mcq"){ ok=S.answers[i]===q.correct; if(S.answers[i]!==null) userAnsText=letter(S.answers[i])+". "+q.options[S.answers[i]]; }
+    else {
+      let a=S.answers[i];
+      if(a){ userAnsText='Placed at ('+a.x+', '+a.y+')';
+        let dx=Math.abs(a.x - q.target.x), dy=Math.abs(a.y - q.target.y);
+        ok=dx<0.6 && dy<0.6;
+      }
+    }
+    let correctText = q.type==="mcq" ? letter(q.correct)+". "+q.options[q.correct] : '('+q.target.x+', '+q.target.y+')';
+    return '<div class="rv"><div class="top"><div class="mark '+(ok?'ok':'no')+'">'+(ok?'✓':'✕')+'</div><div>'+
+      '<div class="meta"><small>Q'+(i+1)+' • '+esc(q.subject)+' • '+(q.type==="point"?"Interactive":"MCQ")+'</small><em class="'+(ok?'ok':'no')+'">'+(ok?'Correct':'Incorrect')+'</em></div>'+
+      '<div class="q">'+esc(q.q)+'</div></div></div>'+
+      '<div class="cmp"><div class="'+(ok?'g':'r')+'"><small>Your Answer</small><span>'+esc(userAnsText)+'</span></div>'+
+      '<div class="g"><small>Correct Answer</small><span>'+esc(correctText)+'</span></div></div>'+
+      '<div class="expl"><small>Explanation</small><p>'+esc(q.explanation)+'</p><div class="math">'+(q.explanationMath||"")+'</div><small>Why other options are wrong</small><p class="w">'+esc(q.whyWrong)+'</p></div></div>';
+  }).join("");
+  return '<div style="display:grid;gap:24px"><div class="grid-res">'+
+    '<section class="card"><div class="flag"></div><div class="pad">'+
+      '<div class="hero"><div><span class="lvl '+lv.cls+'"><span class="d"></span>'+lv.label+'</span><h2>You scored '+s+'/'+N+'</h2><p>'+pct+'% • '+lv.desc+' • Time '+fmt(S.elapsed)+'</p></div>'+
+      '<div class="levelbox"><small>CBC Level</small><b>'+lv.label+'</b><div class="bar"><i style="width:'+pct+'%"></i></div></div></div>'+
+      '<div class="sgrid">'+sc+'</div>'+
+      '<div class="btns"><button type="button" class="btn primary" data-a="email">📧 Email Results to Teacher</button>'+
+      '<button type="button" class="btn ghost" data-a="download">⬇ Download Report</button>'+
+      '<button type="button" class="btn dark-b" data-a="retake">↺ Retake Quiz</button></div>'+
+      (S.emailed?'<div class="sent">Email app opened for <b>'+esc(TEACHER_EMAIL)+'</b>. If it did not open, copy the report.</div>':'')+
+    '</div></section>'+
+    '<aside class="side"><div class="box"><h4>Learner Summary</h4><div class="kv">'+
+      '<div><span>Name</span><b>'+esc(L.name)+'</b></div><div><span>School</span><b>'+esc(L.school||"-")+'</b></div>'+
+      '<div><span>Grade</span><b>'+esc(L.grade)+'</b></div><div><span>Admission</span><b>'+esc(L.admission||"N/A")+'</b></div>'+
+      '<div><span>Date</span><b>'+esc(new Date().toLocaleString("en-KE",{timeZone:"Africa/Nairobi"}))+'</b></div></div></div>'+
+    '<div class="box"><div class="copyrow"><h4>Teacher Report (copy)</h4><button type="button" data-a="copy">Copy Report</button></div>'+
+      '<textarea class="rep" id="rep" readonly>'+esc(report())+'</textarea>'+(S.copied?'<div class="okmsg">Copied!</div>':'')+
+      '</div></aside></div>'+
+    '<section class="card review"><div class="hd row-h"><h3 style="font-size:18px;font-weight:600">Detailed Review & Explanations</h3><span class="tag">'+s+' correct • '+(N-s)+' to review</span></div>'+rv+'</section></div>';
+}
+
+function report(){
+  let o=[]; o.push("GRADE 9 MATH - SIMILARITY, ENLARGEMENT & STRAIGHT LINES");
+  o.push("Learner: "+S.learner.name); o.push("School: "+(S.learner.school||"-")); o.push("Grade: "+S.learner.grade); o.push("Admission: "+(S.learner.admission||"N/A"));
+  o.push("Date: "+new Date().toLocaleString("en-KE",{timeZone:"Africa/Nairobi"}));
+  o.push("Score: "+score()+"/"+N+" ("+Math.round(score()/N*100)+"%)");
+  o.push("Time: "+fmt(S.elapsed));
+  o.push(""); o.push("Breakdown:");
+  SUBJECTS.forEach(sub=>{const t=subjStats(sub); o.push(sub+": "+t.correct+"/"+t.total);});
+  o.push(""); QUESTIONS.forEach((q,i)=>{
+    let ans=S.answers[i]; let ok=false; let txt="Not answered";
+    if(q.type==="mcq"){ ok=ans===q.correct; txt= ans!==null ? letter(ans)+". "+q.options[ans] : "Not answered"; }
+    else { if(ans){ txt='Placed ('+ans.x+','+ans.y+')'; ok=Math.abs(ans.x-q.target.x)<0.6 && Math.abs(ans.y-q.target.y)<0.6; } }
+    o.push((i+1)+". "+q.q); o.push("   Your: "+txt+" | Correct: "+(q.type==="mcq"? letter(q.correct)+". "+q.options[q.correct] : "("+q.target.x+","+q.target.y+")")+" | "+(ok?"Correct":"Incorrect"));
+  });
+  o.push(""); o.push("Teacher Email: "+TEACHER_EMAIL);
+  return o.join("\n");
+}
+
+function startQuiz(){
+  S.view="quiz"; S.idx=0; S.remaining=DURATION; S.elapsed=0;
+  S.answers=Array(N).fill(null);
+  if(S.timer) clearInterval(S.timer);
+  S.timer=setInterval(()=>{
+    S.remaining=Math.max(0,S.remaining-1); S.elapsed++;
+    document.getElementById("chips").innerHTML=chips();
+    if(S.remaining===0){ finish(); }
+  },1000);
+  render();
+}
+
+function finish(){
+  if(S.timer) clearInterval(S.timer);
+  S.view="result"; render(); 
+}
+
+function emailTeacher(){
+  S.emailed=true;
+  const subject="Grade 9 Math Quiz - "+S.learner.name+" - "+score()+"/"+N;
+  window.location.href="mailto:"+TEACHER_EMAIL+"?subject="+encodeURIComponent(subject)+"&body="+encodeURIComponent(report());
+  render();
+}
+
+function render(){
+  document.getElementById("chips").innerHTML = chips();
+  document.getElementById("app").innerHTML = S.view==="landing"?landing():S.view==="quiz"?quiz():result();
+  if(S.view==="quiz"){
+    setTimeout(()=>{ 
+      drawPlane();
+      const canvas=document.getElementById("plane");
+      if(canvas){
+        const handle = (e)=>{
+          e.preventDefault();
+          const rect=canvas.getBoundingClientRect();
+          const scaleX = canvas.width / rect.width;
+          const scaleY = canvas.height / rect.height;
+          const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+          const clientY = e.touches ? e.touches[0].clientY : e.clientY;
+          const x=(clientX-rect.left)*scaleX, y=(clientY-rect.top)*scaleY;
+          const W=canvas.width, H=canvas.height, pad=40, gridSize=(W-2*pad)/10;
+          let gx = Math.round((x - pad)/gridSize);
+          let gy = Math.round((H - pad - y)/gridSize);
+          gx=Math.max(0,Math.min(10,gx)); gy=Math.max(0,Math.min(10,gy));
+          S.answers[S.idx]={x:gx,y:gy};
+          render();
+        };
+        canvas.addEventListener("click", handle);
+        canvas.addEventListener("touchstart", handle, {passive:false});
+      }
+      if(window.MathJax) MathJax.typesetPromise();
+    },60);
+  }
+  if(window.MathJax) MathJax.typesetPromise();
+}
+
+document.getElementById("app").addEventListener("input",e=>{
+  const id=e.target.id;
+  if(id==="f-name"){S.learner.name=e.target.value; const b=document.getElementById("startBtn"); if(b) b.disabled=!e.target.value.trim();}
+  else if(id==="f-school") S.learner.school=e.target.value;
+  else if(id==="f-adm") S.learner.admission=e.target.value;
+});
+document.getElementById("app").addEventListener("click",e=>{
+  const t=e.target.closest("[data-a]"); if(!t) return;
+  const a=t.dataset.a;
+  if(a==="grade"){S.learner.grade=t.dataset.v; document.querySelectorAll(".gbtn").forEach(b=>b.classList.toggle("on",b.dataset.v===S.learner.grade)); return;}
+  if(a==="start"){if(S.learner.name.trim()) startQuiz(); return;}
+  if(a==="pick"){S.answers[S.idx]=+t.dataset.i; render(); return;}
+  if(a==="nav"){S.idx=+t.dataset.i; S.hint=false; render(); return;}
+  if(a==="prev"){S.idx=Math.max(0,S.idx-1); S.hint=false; render(); return;}
+  if(a==="next"){S.idx=Math.min(N-1,S.idx+1); S.hint=false; render(); return;}
+  if(a==="hint"){S.hint=!S.hint; render(); return;}
+  if(a==="submit"){finish(); return;}
+  if(a==="email"){emailTeacher(); return;}
+  if(a==="retake"){S.view="landing"; S.answers=Array(N).fill(null); S.idx=0; S.remaining=DURATION; S.emailed=false; S.copied=false; window.scrollTo(0,0); render(); return;}
+  if(a==="download"){
+    const blob=new Blob([report()],{type:"text/plain"}), url=URL.createObjectURL(blob), l=document.createElement("a");
+    l.href=url; l.download="Grade9-Math-Report-"+S.learner.name.replace(/\s+/g,"-")+"-"+score()+"of"+N+".txt";
+    document.body.appendChild(l); l.click(); l.remove(); URL.revokeObjectURL(url); return;
+  }
+  if(a==="copy"){
+    const txt=report(), done=()=>{S.copied=true; render(); setTimeout(()=>{S.copied=false; if(S.view==="result") render();},2000);};
+    if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(txt).then(done,()=>{document.getElementById("rep").select(); document.execCommand("copy"); done();});}
+    else{document.getElementById("rep").select(); document.execCommand("copy"); done();}
+  }
+});
+
+document.getElementById("setup-mail").textContent=TEACHER_EMAIL;
+document.getElementById("foot-mail").textContent=TEACHER_EMAIL+" receives results";
+render();
+</script>
+</body>
+</html>
